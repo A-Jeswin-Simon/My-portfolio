@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Professional Portfolio</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #111;
+    color: #eee;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #4fc3f7;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzlmanhlNm96NWt1MWpoc3cyZnQ0bnM3NDR6aTUyeml2ZTQzcmNkNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Qvp6Z2fidQR34IcwQ5/giphy.gif') no-repeat center center/cover;
+    filter: brightness(0.22);
+    z-index: -1;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 1rem 4rem;
+  }
+  header {
+    padding: 3rem 2rem 1rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .photo-placeholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #444;
+    border: 4px solid #66bb6a;
+    box-shadow: 0 0 15px #66bb6a;
+    background-image: url('your image');
+    background-size: cover;
+    background-position: center;
+  }
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 800;
+    color: #66bb6a;
+  }
+  header p {
+    font-size: 1.3rem;
+    color: #a3d18a;
+    font-weight: 600;
+    font-style: italic;
+    max-width: 420px;
+  }
+  section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  h2 {
+    border-bottom: 3px solid #4fc3f7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #4fc3f7;
+    font-size: 2rem;
+  }
+  p, li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .highlight {
+    color: #66bb6a;
+    font-weight: 700;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li {
+    position: relative;
+    padding-left: 2.2rem;
+    margin-bottom: 1.3rem;
+  }
+  ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #66bb6a;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .skill-item {
+    background: rgba(102,187,106,0.18);
+    border: 2px solid #66bb6a;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    flex: 1 1 42%;
+    min-width: 260px;
+    font-weight: 700;
+    color: #66bb6a;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: default;
+    user-select: none;
+  }
+  .skill-item:hover {
+    background: #66bb6a;
+    color: #111;
+    transform: scale(1.05);
+  }
+  .cert-list {
+    max-width: 700px;
+    margin: auto;
+  }
+  .cert-list li {
+    padding-left: 2.5rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a3d18a;
+  }
+  .cert-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fbc02d;
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+  .score {
+    color: #4fc3f7;
+    font-weight: 700;
+    margin-left: 0.6rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  @media (max-width: 700px) {
+    header h1 {
+      font-size: 2.4rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 90%;
+    }
+    .skill-item {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="photo-placeholder" aria-label="Your Photo Placeholder"></div>
+  <h1>A Jeswin Simon</h1>
+  <p>Innovative Technologist & Thoughtful Leader</p>
+</header>
+
+<div class="container">
+
+  <section id="about" class="animate-section">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate professional experienced in AI, data science, and full-stack development, skilled in Python, Java, HTML, CSS, and JavaScript.About Me – Harnessing Eccentricity to Forge Impactful Innovation
+I have a distinctive and unconventional approach to problem-solving, driven by a passion to create solutions that stand out not just for novelty, but for real-world impact and viability. I thrive on exploring ideas that challenge the norm and push boundaries, combining creativity with strategic depth.
+
+My way of thinking is both visionary and pragmatic—I aim to design systems and concepts that are not only innovative but also sustainable and scalable. I believe true uniqueness comes from blending original thought with practical application, ensuring ideas are powerful enough to make a difference and resilient enough to grow over time.
+
+This passion for meaningful innovation fuels my drive to carve out a unique path in my career—one where I can bring fresh perspectives and build transformative solutions that others might overlook.
+    </p>
+  </section>
+
+  <section id="achievements" class="animate-section">
+    <h2>Honours & Awards</h2>
+    <ul>
+      <li><span class="highlight">Grand Finale Prize Winner</span> — Dark Pattern Buster Hackathon, IIT BHU
+National-level finalist identifying deceptive online practices using AI tools.
+</li>
+      <li><span class="highlight">2nd Prize</span> — IEEE Product Pitch Competition
+Presented innovative accessible business insights product.</li>
+      <li><span class="highlight">Selected as Team Lead & Mentor Recognition for Efficiency</span> — Infosys Internship Project
+Led the development of a competitive e-commerce insights dashboard using Streamlit, Selenium, Groq API; recognized by mentor for outstanding efficiency.</li>
+      <li><span class="highlight">Leadership Excellence Award</span> — Presented by Actor Shiva Kumar and Actor Karthi
+Recognized for outstanding leadership in academics and extracurriculars.</li>
+      <li><span class="highlight">Google Achievement Award</span> — For deploying and promoting a website reaching 150+ clicks in under a month(May 2025)
+Demonstrated mastery of digital marketing, SEO, and user engagement.</li>
+      <li><span class="highlight">Technical Collaboration Recognition</span>  -- Partnered with Dr. Edison Samraj, a global visionary,G20 world representative and UN personally invited by the Prime Minister of India to advise on education reform and economic innovation at the highest levels.
+Enhanced AI-driven features and behavioral data clustering in a scalable networking platform championed at Panimalar Engineering College, aligned with G20 & UN educational initiatives.</li>
+      <li><span class="highlight">Toastmasters President</span> Drafted bylaws and led impactful club initiatives.
+</li>
+      <li><span class="highlight">Event Host</span> — Session with Actor Prashant & Journalist Nakkeeran Gopal, DB Egmore
+Successfully managed a high-profile event with distinguished guests.</li>
+    </ul>
+  </section>
+
+  <section id="leadership" class="animate-section">
+    <h2>Leadership Roles</h2>
+    <ul>
+      <li>President of Toastmasters Club — Led strategic restructuring and mentored members to improve communication skills and confidence.</li>
+      <li>Team Lead at Infosys Internship — Managed cross-functional team to deliver e-commerce analytics dashboard using Java and JavaScript.</li>
+      <li>Team leader of Tech adventists who made it to Dark Pattern Buster Hackathon, IIT BHU
+National-level final and bagged finalist prize</li>
+      <li>Don Bosco Egmore batch representative</li>
+      </ul>
+  </section>
+
+  <section id="skills" class="animate-section">
+    <h2>Technical Skills & Core Strengths</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Python & Java for Data Science and Development</div>
+      <div class="skill-item">Full-Stack Web Development (HTML, CSS, JavaScript)</div>
+      <div class="skill-item">AI & Machine Learning Applications</div>
+      <div class="skill-item">Strategic Leadership & Team Management</div>
+      <div class="skill-item">Project Management & Agile Practices</div>
+      <div class="skill-item">Public Speaking & Event Hosting</div>
+      <div class="skill-item">Data Analytics & Visualization</div>
+      <div class="skill-item">Continuous Learning & Adaptability</div>
+    </div>
+  </section>
+
+  <section id="certifications" class="animate-section">
+    <h2>Certifications & Courses</h2>
+    <ul class="cert-list">
+      <li>Oracle Certified Professional - Generative AI <span class="score">(96%)</span></li>
+      <li>Python for Data Science</li>
+      <li>Artificial Intelligence Primer <span class="score">(85%)</span></li>
+      <li>Principles of Generative AI <span class="score">(85%)</span></li>
+      <li>OpenAI GPT-3 for Developers</li>
+      <li>Deep Learning for Developers</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="animate-section">
+    <h2>Notable Projects & Competitions</h2>
+    <ul>
+      <li><span class="highlight">National AI Hackathon:</span> Developed a Python-based model to detect deceptive online practices, combining machine learning with data analytics to achieve top prize.</li>
+      <li><span class="highlight">IEEE Product Pitch:</span> Designed and presented a market analysis tool integrating AI predictions, highlighting business strategy and technical feasibility.</li>
+      <li><span class="highlight">Infosys Internship Project:</span> Led development of a JavaScript dashboard with real-time e-commerce data visualization, enhancing decision-making capabilities.</li>
+      <li><span class="highlight">Website Deployment:</span> Created and launched a fully responsive website using HTML, CSS, and JavaScript, driving user engagement and showcasing technical skills.</li>
+      <li><span class="highlight">Toastmasters Club Management:</span> Improved club operations and member skill levels through effective communication workshops and leadership mentoring.</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  © 2025 A Jeswin Simon. All rights reserved.
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll('.animate-section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
+</body>
+</html>
